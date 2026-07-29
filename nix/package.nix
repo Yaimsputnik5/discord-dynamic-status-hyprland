@@ -6,7 +6,7 @@
 
 rustPlatform.buildRustPackage {
   pname = "discord-dynamic-status-wayland";
-  version = "2.0.1";
+  version = "2.0.2";
 
   src = lib.cleanSource ../.;
 

@@ -11,13 +11,36 @@ let
 
   tomlFormat = pkgs.formats.toml { };
 
+  defaultClasses = {
+    ghostty = {
+      match = "com.mitchellh.ghostty";
+
+      state = "Using Ghostty";
+      details = "Writing command lines";
+      small_text = "Ghostty with Fish";
+    };
+
+    kitty = {
+      state = "Using Kitty";
+      details = "Writing command lines";
+      small_text = "Kitty with Fish";
+    };
+
+    code = {
+      state = "Using VS Code";
+      details = "Developing software";
+      small_text = "Visual Studio Code";
+    };
+  };
+
   configFile = tomlFormat.generate "config.toml" {
     settings = cfg.settings;
     default = cfg.default;
-    classes = cfg.classes;
+    classes = lib.recursiveUpdate defaultClasses cfg.classes;
   };
 in
 {
+
   options.services.dynamic-drpc-wayland = {
     enable = lib.mkEnableOption "Discord Dynamic Status Wayland";
 
@@ -25,7 +48,6 @@ in
       app_id = lib.mkOption {
         type = lib.types.str;
         default = "1460605258072985705";
-        description = "Discord application ID";
       };
 
       wm = lib.mkOption {
@@ -35,14 +57,11 @@ in
         ];
 
         default = "niri";
-
-        description = "Wayland compositor";
       };
 
       update_delay = lib.mkOption {
         type = lib.types.int;
         default = 3;
-        description = "RPC debounce delay";
       };
     };
 
@@ -63,28 +82,7 @@ in
 
     classes = lib.mkOption {
       type = lib.types.attrsOf (lib.types.attrsOf lib.types.anything);
-
-      default = {
-        ghostty = {
-          match = "com.mitchellh.ghostty";
-
-          state = "At ghostty";
-          details = "Writing command lines";
-          small_text = "Ghostty with Fish";
-        };
-
-        kitty = {
-					state = "At kitty";
-					details = "Writing command lines";
-					small_text = "Kitty with Fish";
-        };
-
-        code = {
-          state = "At VSCode";
-          details = "Developing some programs";
-          small_text = "VSCode";
-        };
-      };
+      default = { };
     };
   };
 
@@ -98,10 +96,7 @@ in
     systemd.user.services.dynamic-drpc-wayland = {
       Unit = {
         Description = "Discord Dynamic Status Wayland";
-
-        After = [
-          "graphical-session.target"
-        ];
+        After = [ "graphical-session.target" ];
       };
 
       Service = {
@@ -112,11 +107,7 @@ in
         RestartSec = 3;
       };
 
-      Install = {
-        WantedBy = [
-          "graphical-session.target"
-        ];
-      };
+      Install.WantedBy = [ "graphical-session.target" ];
     };
   };
 }

@@ -16,16 +16,87 @@ small_image = "{wm}"
 [classes.ghostty]
 match = "com.mitchellh.ghostty"
 
-state = "At ghostty"
+state = "Using Ghostty"
 details = "Writing command lines"
 small_text = "Ghostty with Fish"
 
 [classes.kitty]
-state = "At kitty"
+state = "Using Kitty"
 details = "Writing command lines"
 small_text = "Kitty with Fish"
 
 [classes.code]
-state = "At VSCode"
-details = "Developing some programs"
-small_text = "VSCode"
+state = "Using VS Code"
+details = "Developing software"
+small_text = "Visual Studio Code"
+
+[classes.jetbrains-rustrover]
+state = "Using RustRover"
+details = "Building cool stuff in Rust"
+small_text = "JetBrains IDEs"
+
+[classes.jetbrains-webstorm]
+state = "Using WebStorm"
+details = "Developing modern web applications"
+small_text = "JetBrains IDEs"
+
+[classes.jetbrains-datagrip]
+state = "Using DataGrip"
+details = "Managing databases"
+small_text = "JetBrains IDEs"
+
+[classes.jetbrains-rider]
+state = "Using Rider"
+details = "Developing games in Unity"
+small_text = "JetBrains IDEs"
+
+[classes.jetbrains-pycharm]
+state = "Using PyCharm"
+details = "Writing Python code"
+small_text = "JetBrains IDEs"
+
+[classes.discord]
+state = "Using Discord"
+details = "Chatting with friends"
+small_text = "Nixcord with Equicord"
+
+[classes.telegram]
+match = "org.telegram.desktop"
+
+state = "Using Telegram"
+details = "Chatting with friends"
+small_text = "Telegram Desktop"
+
+[classes.steam]
+state = "Browsing Steam"
+details = "Looking for something to play"
+small_text = "Steam"
+
+[classes.firefox]
+state = "Browsing the web"
+details = "Exploring the internet"
+small_text = "Firefox"
+
+[classes.librewolf]
+state = "Browsing the web"
+details = "Browsing privately"
+small_text = "LibreWolf"
+
+[classes.chromium-browser]
+state = "Browsing the web"
+details = "Exploring the internet"
+small_text = "Chromium"
+
+[classes.tor-browser]
+match = "Tor Browser"
+
+state = "Browsing anonymously"
+details = "Protecting my privacy"
+small_text = "Tor Browser.onion"
+
+[classes.nautilus]
+match = "org.gnome.Nautilus"
+
+state = "Managing files"
+details = "Exploring the filesystem"
+small_text = "Nautilus with plugins"
