@@ -31,6 +31,90 @@ let
       details = "Developing software";
       small_text = "Visual Studio Code";
     };
+
+    "jetbrains-rustrover" = {
+      state = "Using RustRover";
+      details = "Building cool stuff in Rust";
+      small_text = "JetBrains IDEs";
+    };
+
+    "jetbrains-webstorm" = {
+      state = "Using WebStorm";
+      details = "Developing modern web applications";
+      small_text = "JetBrains IDEs";
+    };
+
+    "jetbrains-datagrip" = {
+      state = "Using DataGrip";
+      details = "Managing databases";
+      small_text = "JetBrains IDEs";
+    };
+
+    "jetbrains-rider" = {
+      state = "Using Rider";
+      details = "Developing games in Unity";
+      small_text = "JetBrains IDEs";
+    };
+
+    "jetbrains-pycharm" = {
+      state = "Using PyCharm";
+      details = "Writing Python code";
+      small_text = "JetBrains IDEs";
+    };
+
+    discord = {
+      state = "Using Discord";
+      details = "Chatting with friends";
+      small_text = "Nixcord with Equicord";
+    };
+
+    telegram = {
+      match = "org.telegram.desktop";
+
+      state = "Using Telegram";
+      details = "Chatting with friends";
+      small_text = "Telegram Desktop";
+    };
+
+    steam = {
+      state = "Browsing Steam";
+      details = "Looking for something to play";
+      small_text = "Steam";
+    };
+
+    firefox = {
+      state = "Browsing the web";
+      details = "Exploring the internet";
+      small_text = "Firefox";
+    };
+
+    librewolf = {
+      state = "Browsing the web";
+      details = "Browsing privately";
+      small_text = "LibreWolf";
+    };
+
+    chromium-browser = {
+      state = "Browsing the web";
+      details = "Exploring the internet";
+      small_text = "Chromium";
+    };
+
+    tor-browser = {
+      match = "Tor Browser";
+
+      state = "Browsing anonymously";
+      details = "Protecting my privacy";
+      small_text = "Tor Browser.onion";
+    };
+
+    nautilus = {
+      match = "org.gnome.Nautilus";
+
+      state = "Managing files";
+      details = "Exploring the filesystem";
+      small_text = "Nautilus with plugins";
+    };
   };
 
   configFile = tomlFormat.generate "config.toml" {
