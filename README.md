@@ -25,7 +25,7 @@ Automatically updates your Discord status based on the active window.
 ### 1. Clone repository
 
 ```bash
-git clone https://github.com/mrkirill046/discord-dynamic-status-wayland.git
+git clone https://github.com/kazuha046/discord-dynamic-status-wayland.git
 cd discord-dynamic-status-wayland
 cargo run --release
 ```
@@ -125,7 +125,7 @@ small_text = "VSCode"
 #### 1. Clone repository
 
 ```bash
-git clone https://github.com/mrkirill046/discord-dynamic-status-wayland.git
+git clone https://github.com/kazuha046/discord-dynamic-status-wayland.git
 cd discord-dynamic-status-wayland
 ```
 
@@ -162,7 +162,7 @@ discord-dynamic-status-wayland
 {
   inputs = {
     dynamic-drpc-wayland = {
-      url = "github:mrkirill046/discord-dynamic-status-wayland";
+      url = "github:kazuha046/discord-dynamic-status-wayland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
